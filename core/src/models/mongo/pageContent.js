@@ -23,3 +23,9 @@ export const PageImageContentModel = ContentModel.discriminator('PAGE_CONTENT_IM
   width: { type: Schema.Types.Number },
   height: { type: Schema.Types.Number },
 }));
+
+export const PageCardContentModel = ContentModel.discriminator('PAGE_CONTENT_CARD', new Schema({
+  imageUrl: { type: Schema.Types.String, required: true },
+  title: { type: Schema.Types.String, required: true },
+  description: { type: Schema.Types.String, required: true },
+}));

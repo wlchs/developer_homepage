@@ -7,7 +7,7 @@ import ConfigModel from '../mongo/config';
 const ConfigType = new GraphQLObjectType({
   name: 'Config',
   description: 'Data type for server configuration',
-  fields: () => ({
+  fields: {
     adminUserName: {
       type: GraphQLNonNull(GraphQLString),
       description: 'Admin email address',
@@ -16,7 +16,7 @@ const ConfigType = new GraphQLObjectType({
       type: GraphQLNonNull(GraphQLString),
       description: 'Admin password hash',
     },
-  }),
+  },
 });
 
 export const configQuery = {

@@ -6,7 +6,7 @@ import ProjectModel from '../mongo/project';
 const ProjectType = new GraphQLObjectType({
   name: 'Project',
   description: 'Data type for own projects and contributions',
-  fields: () => ({
+  fields: {
     name: {
       type: GraphQLNonNull(GraphQLString),
       description: 'Project name',
@@ -23,7 +23,7 @@ const ProjectType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'Link to project website if available',
     },
-  }),
+  },
 });
 
 export const projectQuery = {
@@ -56,7 +56,7 @@ export const projectMutation = {
         description: 'Link to project website if available',
       },
     },
-    resolve: async (parent, args) => {
+    resolve: async (_, args) => {
       const project = new ProjectModel();
       project.name = args.name;
       project.description = args.description;

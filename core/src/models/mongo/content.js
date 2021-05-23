@@ -7,7 +7,7 @@ const contentSchema = new Schema({
     type: Schema.Types.String, required: true, unique: true, index: true,
   },
   contentType: {
-    type: Schema.Types.String, required: true, enum: contentTypes,
+    type: Schema.Types.String, required: true, enum: Object.values(contentTypes),
   },
 }, {
   discriminatorKey: 'contentType',

@@ -21,7 +21,7 @@ const devConfiguration = {
   graphiql: true,
   cors: true,
   auth: {
-    enabled: true,
+    enabled: false,
     jwtAlgorithm: 'HS256',
     jwtExpire: '1h',
   },
